@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:dev": "ng serve",
+    "start": "npm run build:ssr && npm run serve:ssr",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -25,8 +26,10 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/platform-server": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.4",
     "@nguniversal/express-engine": "^7.1.0",
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "express": "^4.15.2",
     "rxjs": "~6.3.3",
@@ -55,5 +58,8 @@
     "tslint": "~5.11.0",
     "typescript": "~3.2.2",
     "webpack-cli": "^3.1.0"
+  },
+  "engines": {
+    "node": "10.3.0"
   }
 }
