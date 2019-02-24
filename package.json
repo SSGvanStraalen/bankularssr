@@ -12,7 +12,8 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run bankular:server:production"
+    "build:client-and-server-bundles": "ng build --prod && ng run bankular:server:production",
+    "build:ssrAWS": "npm run build:ssr && node zipDist"
   },
   "private": true,
   "dependencies": {
@@ -41,9 +42,10 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "archiver": "^3.0.0",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
