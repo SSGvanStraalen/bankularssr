@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/bootstrap-grid";
+
+@import "~bootstrap/scss/_jumbotron";
+@import "~bootstrap/scss/_type";
+@import "~bootstrap/scss/_card";
+// @import "~bootstrap/scss/bootstrap";
+
+.jumbotron {
+    background-image: url("https://placekitten.com/1200/300")
+}
+
+.jumbotext{
+    background-color:rgba(124, 11, 11, 0.692);
+    padding: 4px;
+    display: inline-block;
+    margin: 0px;
+    color: white;
+}

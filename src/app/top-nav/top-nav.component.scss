@@ -1,1 +1,14 @@
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/_navbar";
+@import "~bootstrap/scss/_utilities";
+@import "~bootstrap/scss/_buttons";
+
+nav {
+    margin-bottom: 16px;
+}
+
+img {
+    margin-top: -4px;
+}
