@@ -7,6 +7,11 @@ import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
 import * as express from 'express';
 import {join} from 'path';
+const bodyParser = require('body-parser');
+
+const passport = require('./routes/common/passport');
+const user = require('./routes/user');
+const accounts = require('./routes/accounts');
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -14,7 +19,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const dist = process.env.DIST || 'dist/browser'
+const dist = process.env.DIST || 'dist/browser';
 
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), dist);
@@ -33,8 +38,16 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);
 
+app.use(passport.init());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
+
+app.use('/user', user.router);
+app.use('/accounts', accounts.router);
+
 // Serve static files from /browser
 app.get('*.*', express.static(DIST_FOLDER, {
   maxAge: '1y'
@@ -42,7 +55,7 @@ app.get('*.*', express.static(DIST_FOLDER, {
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  res.render('index', { req });
+  res.render('index', {req});
 });
 
 // Start up the Node server

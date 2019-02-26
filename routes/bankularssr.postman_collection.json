@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "85eecb13-3fee-4d30-bd85-fb12db9f0a1d",
+		"name": "bankularssr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:4000/user/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"karin\",\r\n\"password\":\"karin\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/accounts/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthcmluIiwiZmlyc3RuYW1lIjoiS2FyaW4iLCJsYXN0bmFtZSI6IiIsImlhdCI6MTU1MTIxNDQ3NCwiZXhwIjoxNTUxMjE4MDc0fQ.YuKAUNWDS_tfhhLuwlR5wDSD1r72cOoWJ328goh3NCM"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:4000/accounts/",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
