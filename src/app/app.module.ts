@@ -9,6 +9,7 @@ import { CreditPageComponent } from './credit-page/credit-page.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { AccountOverviewComponent } from './account-overview/account-overview.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     TopNavComponent,
     HomePageComponent,
     CreditPageComponent,
-    LoginComponent
+    LoginComponent,
+    AccountOverviewComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
