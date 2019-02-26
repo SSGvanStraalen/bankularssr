@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+// import AuthService from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,15 +15,17 @@ export class LoginComponent implements OnInit {
   public message: string;
 
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal
+    // , private authService: AuthService
+  ) {
   }
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
-      this.username='';
-      this.password='';
-      this.message='';
+      this.username = '';
+      this.password = '';
+      this.message = '';
 
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -31,9 +33,10 @@ export class LoginComponent implements OnInit {
   }
 
   checkPass() {
-    if(this.username === this.password){
+    if (this.username === this.password) {
       console.log('You shall pass');
       this.modalService.dismissAll('close')
+      // this.authService.login(this.username, this.password);
     } else {
       this.message = 'Nope you shall not pass'
       console.log('you shall not pass')
@@ -46,7 +49,7 @@ export class LoginComponent implements OnInit {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 
