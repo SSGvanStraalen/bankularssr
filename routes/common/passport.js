@@ -1,7 +1,7 @@
 'use strict';
 
 const passport = require('passport');
-const { Strategy, ExtractJwt } = require('passport-jwt');
+const { Strategy } = require('passport-jwt');
 const jwt = require('jsonwebtoken');
 
 const { getUser } = require('./user');
@@ -17,8 +17,13 @@ function authenticate() {
 
 function init() {
   // init passport
+  let cookieExtractor = function(req) {
+    let token = null;
+    if (req && req.cookies) token = req.cookies['jwt'];
+    return token;
+  };
   const opts = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    jwtFromRequest: cookieExtractor,
     secretOrKey: secret,
   };
   passport.use(new Strategy(opts, async (jwtPayload, done) => {

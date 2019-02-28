@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {AuthService} from '../auth/auth.service';
+import {AuthService} from '../services/auth.service';
 import {first} from "rxjs/operators";
 
 @Component({

@@ -7,27 +7,27 @@ import {map} from 'rxjs/operators';
 })
 export class AuthService {
 
+  user: User;
+  token: string;
+
   constructor(private http: HttpClient) {
   }
 
-  static getToken() {
-    return localStorage.getItem('id_token');
-  }
-
   static logout() {
-    localStorage.removeItem("id_token");
+    // remove cookie
   }
 
   login(username: string, password: string) {
     return this.http.post<any>(`/user/login`, {username, password})
-      .pipe(map(user => {
+      .pipe(map(resp => {
         // login successful if there's a jwt token in the response
-        if (user && user.token) {
+        if (resp && resp.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          this.setSession(user.token)
+          this.user = resp.user;
+          this.token = resp.token;
         }
 
-        return user;
+        return resp.user;
       }));
   }
 
@@ -39,8 +39,11 @@ export class AuthService {
     return !this.isLoggedIn();
   }
 
-  private setSession(token) {
-    localStorage.setItem('id_token', token);
-  }
+}
 
+export interface User {
+  username: string;
+  firstname: string;
+  lastname: string;
+  prefix: string;
 }
