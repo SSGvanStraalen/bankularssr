@@ -2,13 +2,17 @@
 // @import "~bootstrap/scss/bootstrap";
 
 .jumbotron {
-    background-image: url("https://placekitten.com/1100/400")
+   background-color: rgb(228, 228, 228)
 }
 
 .jumbotext{
-    background-color:rgba(124, 11, 11, 0.692);
     padding: 4px;
     display: inline-block;
     margin: 0px;
-    color: white;
+    color: rgb(14, 187, 255);
+}
+
+.fatty {
+    font-weight: 920;
+    font-size: 80px;
 }
