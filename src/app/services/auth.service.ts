@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {Observable} from "rxjs";
+import {Account} from "./accounts.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +13,11 @@ export class AuthService {
   token: string;
 
   constructor(private http: HttpClient) {
+
   }
 
-  static logout() {
-    // remove cookie
+  getUser(): Observable<User>  {
+    return this.http.get<User>('/api/user');
   }
 
   login(username: string, password: string) {
@@ -26,19 +29,13 @@ export class AuthService {
           this.user = resp.user;
           this.token = resp.token;
         }
-
         return resp.user;
       }));
   }
 
-  public isLoggedIn() {
-    return false;
+  logout() {
+    document.cookie = "jwt=";
   }
-
-  isLoggedOut() {
-    return !this.isLoggedIn();
-  }
-
 }
 
 export interface User {

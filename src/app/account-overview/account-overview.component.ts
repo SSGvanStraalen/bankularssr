@@ -12,16 +12,15 @@ export class AccountOverviewComponent implements OnInit {
   accounts: Account[];
 
   constructor(private accountsService: AccountsService) {
-    this.accounts = accountsService.accounts;
   }
 
   ngOnInit() {
-   this.getAccounts();
+    this.getAccounts();
   }
 
   getAccounts(): void {
-   this.accountsService.getAccounts()
-     .subscribe(accounts => this.accounts = accounts);
+    this.accountsService.getAccounts()
+      .subscribe(accounts => this.accounts = accounts);
   }
 
 }

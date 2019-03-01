@@ -6,7 +6,6 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class AccountsService {
-  accounts;
 
   constructor(private http: HttpClient) {
   }

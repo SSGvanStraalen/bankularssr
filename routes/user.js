@@ -2,7 +2,7 @@
 
 const express = require('express');
 const {validateUser} = require('./common/user');
-const {generateToken} = require('./common/passport');
+const {authenticate, generateToken} = require('./common/passport');
 
 const router = express.Router();
 
@@ -19,6 +19,13 @@ router.post('/login', (req, res) => {
   }).catch((err) => {
     res.status(401).json({success: false, msg: err.message});
   });
+});
+
+router.get('/', authenticate(), async (req, res) => {
+  if (req.user) {
+    res.json(req.user);
+  }
+  res.json(false);
 });
 
 export {router};

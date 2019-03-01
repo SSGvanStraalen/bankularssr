@@ -24,7 +24,9 @@
               <a class="nav-link" href="#">Stocks</a>
             </li>
       </ul>
-      <button class="btn btn-primary my-2 my-sm-0" routerLink="/login" type="submit">Login</button>
+      <span class="mx-3">{{user.prefix}} {{ user.lastname}}</span>
+      <button *ngIf="!user" class="btn btn-primary my-2 my-sm-0" routerLink="/login" type="submit">Login</button>
+      <button *ngIf="user" class="btn btn-primary my-2 my-sm-0" (click)="logout()" >Logout</button>
       <!-- <app-login></app-login> -->
     </div>
   </nav>
