@@ -16,12 +16,12 @@ export class AccountOverviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAccounts();
+   this.getAccounts();
   }
 
   getAccounts(): void {
-    this.accountsService.getAccounts()
-      .subscribe(accounts => this.accounts = accounts);
+   this.accountsService.getAccounts()
+     .subscribe(accounts => this.accounts = accounts);
   }
 
 }

@@ -13,6 +13,8 @@ const cookieParser = require('cookie-parser')
 const passport = require('./routes/common/passport');
 const user = require('./routes/user');
 const accounts = require('./routes/accounts');
+const homeContent = require('./routes/home-content');
+
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -49,6 +51,7 @@ app.use(cookieParser());
 
 app.use('/user', user.router);
 app.use('/accounts', accounts.router);
+app.use('/homeContent', homeContent.router);
 
 // Serve static files from /browser
 app.get('*.*', express.static(DIST_FOLDER, {
