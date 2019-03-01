@@ -12,6 +12,7 @@ import {LoginComponent} from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {AccountOverviewComponent} from './account-overview/account-overview.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {AccountOverviewComponent} from './account-overview/account-overview.comp
     HomePageComponent,
     CreditPageComponent,
     LoginComponent,
-    AccountOverviewComponent
+    AccountOverviewComponent,
+    LoginPageComponent
   ],
   imports: [
     HttpClientModule,
