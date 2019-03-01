@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-// import AuthService from '../auth/auth.service';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AuthService} from '../services/auth.service';
+import {first} from "rxjs/operators";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [AuthService]
 })
 export class LoginComponent implements OnInit {
 
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private modalService: NgbModal
-    // , private authService: AuthService
+    , private authService: AuthService
   ) {
   }
 
@@ -36,7 +38,15 @@ export class LoginComponent implements OnInit {
     if (this.username === this.password) {
       console.log('You shall pass');
       this.modalService.dismissAll('close')
-      // this.authService.login(this.username, this.password);
+      this.authService.login(this.username, this.password)
+        .pipe(first())
+        .subscribe(
+          data => {
+            console.log('data',data);
+          },
+          error => {
+            console.log('error',error);
+          });
     } else {
       this.message = 'Nope you shall not pass'
       console.log('you shall not pass')

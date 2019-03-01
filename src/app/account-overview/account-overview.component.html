@@ -1,3 +1,7 @@
-<p>
-  account-overview works!
-</p>
+<h2>Account Overview</h2>
+
+<div *ngFor="let account of accounts">
+  {{account.acc}}
+  {{account.accnr}}
+  {{account.balance}}
+</div>

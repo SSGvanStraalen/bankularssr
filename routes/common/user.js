@@ -22,7 +22,7 @@ async function validateUser(username, password) {
         fulfill({
           success: true,
           user: {
-            username: user.username, firstname: user.firstname, lastname: user.lastname,
+            username: user.username, firstname: user.firstname, lastname: user.lastname, prefix: user.prefix,
           },
         });
       } else {

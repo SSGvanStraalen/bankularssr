@@ -8,6 +8,7 @@ import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 import * as express from 'express';
 import {join} from 'path';
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
 
 const passport = require('./routes/common/passport');
 const user = require('./routes/user');
@@ -41,6 +42,7 @@ app.set('views', DIST_FOLDER);
 app.use(passport.init());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
