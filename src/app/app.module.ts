@@ -1,7 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './services/auth.interceptor';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -12,7 +13,7 @@ import {LoginComponent} from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {AccountOverviewComponent} from './account-overview/account-overview.component';
-import { LoginPageComponent } from './login-page/login-page.component';
+import {LoginPageComponent} from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,12 @@ import { LoginPageComponent } from './login-page/login-page.component';
     NgbModule,
     FormsModule
   ],
-  providers: [  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },],
   bootstrap: [AppComponent]
 })
 export class AppModule {
