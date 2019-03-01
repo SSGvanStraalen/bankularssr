@@ -1,0 +1,26 @@
+.login-block {
+    min-height: 50vh;
+}
+
+.login-pop-block {
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: -10px 14px 20px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.login-pop-block-wrapper {
+    min-width: 300px;
+    right: 16vw;
+    top: 15vh;
+    position: absolute;
+}
+form {
+    padding: 40px;
+}
+.buttons-top {
+
+    right: 12vw;
+    top: 1vh;
+    position: absolute;
+}
