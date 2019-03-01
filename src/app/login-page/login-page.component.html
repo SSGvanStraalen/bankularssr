@@ -6,7 +6,7 @@
     <div class="d-inline-block login-pop-block">
         <img width="400px" src="../../assets/KittyCard-Top.png"/>
         <div>
-            <form name="loginForm">
+            <form name="loginForm" (keydown.enter)="checkPass()">
                 <p>login</p>
                 <div class="form-group">
                   <label for="username">Kitty name: </label>

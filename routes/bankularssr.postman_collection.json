@@ -20,12 +20,13 @@
 					"raw": "{\r\n\"username\":\"kitty\",\r\n\"password\":\"kitty\"\r\n}"
 				},
 				"url": {
-					"raw": "localhost:4000/user/login",
+					"raw": "localhost:4200/api/user/login",
 					"host": [
 						"localhost"
 					],
-					"port": "4000",
+					"port": "4200",
 					"path": [
+						"api",
 						"user",
 						"login"
 					]
@@ -37,30 +38,19 @@
 			"name": "localhost:4000/accounts/",
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthcmluIiwiZmlyc3RuYW1lIjoiS2FyaW4iLCJsYXN0bmFtZSI6IiIsImlhdCI6MTU1MTIxNDQ3NCwiZXhwIjoxNTUxMjE4MDc0fQ.YuKAUNWDS_tfhhLuwlR5wDSD1r72cOoWJ328goh3NCM",
-						"disabled": true
-					},
-					{
-						"key": "Cookie",
-						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtpdHR5IiwiZmlyc3RuYW1lIjoia2l0dHkiLCJsYXN0bmFtZSI6Ik1lb3ciLCJpYXQiOjE1NTEzOTE3NDksImV4cCI6MTU1MTM5NTM0OX0.HEQC3saMDC5T1dc8Gd92vnsx4hyUXScr3i-YlbvSFtg;",
-						"type": "text",
-						"disabled": true
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:4000/accounts/",
+					"raw": "localhost:4000/api/accounts/",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
+						"api",
 						"accounts",
 						""
 					]
