@@ -12,7 +12,7 @@ export class AccountsService {
   }
 
   getAccounts(): Observable<Account[]> {
-    return this.http.get<Account[]>('/accounts');
+    return this.http.get<Account[]>('/api/accounts');
   }
 
 }

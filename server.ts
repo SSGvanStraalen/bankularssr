@@ -11,9 +11,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 
 const passport = require('./routes/common/passport');
-const user = require('./routes/user');
-const accounts = require('./routes/accounts');
-const homeContent = require('./routes/home-content');
+const api = require('./routes/api');
 
 
 // Faster server renders w/ Prod mode (dev mode never needed)
@@ -49,9 +47,7 @@ app.use(cookieParser());
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
 
-app.use('/user', user.router);
-app.use('/accounts', accounts.router);
-app.use('/homeContent', homeContent.router);
+app.use('/api', api.router);
 
 // Serve static files from /browser
 app.get('*.*', express.static(DIST_FOLDER, {

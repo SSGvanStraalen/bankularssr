@@ -9,7 +9,7 @@ import { APP_BASE_HREF } from '@angular/common';
 })
 export class HomeContentService {
   homeContent;
-  private homeContentUrl = '/homeContent';
+  private homeContentUrl = '/api/homeContent';
 
   constructor(private http: HttpClient,
     @Optional() @Inject(APP_BASE_HREF) origin: string) {
