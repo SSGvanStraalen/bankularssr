@@ -11,7 +11,7 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {CreditPageComponent} from './credit-page/credit-page.component';
 import {LoginComponent} from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AccountOverviewComponent} from './account-overview/account-overview.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 
@@ -23,14 +23,15 @@ import {LoginPageComponent} from './login-page/login-page.component';
     CreditPageComponent,
     LoginComponent,
     AccountOverviewComponent,
-    LoginPageComponent
+    LoginPageComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
