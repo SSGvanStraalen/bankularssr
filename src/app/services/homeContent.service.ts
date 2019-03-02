@@ -1,7 +1,7 @@
-import {Injectable, Inject, Optional} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";
-import { APP_BASE_HREF } from '@angular/common'; 
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -11,10 +11,8 @@ export class HomeContentService {
   homeContent;
   private homeContentUrl = '/api/homeContent';
 
-  constructor(private http: HttpClient,
-    @Optional() @Inject(APP_BASE_HREF) origin: string) {
-      origin = origin === null ?'':origin;
-      this.homeContentUrl = `${origin}${this.homeContentUrl}`;
+  constructor(private http: HttpClient) {
+      this.homeContentUrl = `${environment.apiUrl}${this.homeContentUrl}`;
 
   }
 
