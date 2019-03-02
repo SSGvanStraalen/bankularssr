@@ -27,7 +27,7 @@ import {LoginPageComponent} from './login-page/login-page.component';
   ],
   imports: [
     HttpClientModule,
-    BrowserModule.withServerTransition({appId: 'serverApp'}),
+    BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule
