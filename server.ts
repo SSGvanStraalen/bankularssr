@@ -27,9 +27,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-//Example Express Rest API endpoints
-app.get('/api/**', (req, res) => { });
-
 app.use('/api', api.router);
 
 // Serve static files from /browser
