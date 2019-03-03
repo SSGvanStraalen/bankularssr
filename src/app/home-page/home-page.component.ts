@@ -48,7 +48,7 @@ export class HomePageComponent implements OnInit {
 
   gethomeContent(): void {
     this.homeContentSerivce.getHomeContent()
-      .subscribe(hc => {console.log('dddddd');console.log(this.homeContent); this.homeContent = hc});
+      .subscribe(hc => {this.homeContent = hc});
   }
 
 }

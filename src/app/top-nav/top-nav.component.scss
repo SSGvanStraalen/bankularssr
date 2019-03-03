@@ -1,5 +1,26 @@
-
-
 img {
     margin-top: -4px;
+}
+.navbar-brand{
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.navbar-light {
+    background-color: #dcdcdc;
+}
+.nav-link {
+    font-weight: 600;
+}
+
+.nav-item.active {
+    width: 68px;
+    height: 37px;
+    border-radius: 6px;
+    background-color: #030303;
+    padding-left: 3px;
+    
+    a {
+        color: #fff;
+    }
 }

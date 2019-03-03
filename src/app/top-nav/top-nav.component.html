@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-cat">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand mr-5" href="#">
         <img width="30" alt="Angular Logo" class="d-inline-block" src="../../assets/bankular_Logo.svg">
         Bankular
       </a>
@@ -9,20 +9,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/">HOME <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/overview" href="#">Account Overview</a>
+          <a class="nav-link" routerLink="/overview" href="#">KITTYCARD</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/credit" href="#">Credit Cards</a>
+          <a class="nav-link" routerLink="/credit" href="#">KITTYLOAN</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Loans</a>
+            <a class="nav-link" href="#">CATSTOCK</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Stocks</a>
-            </li>
       </ul>
       <span *ngIf="user" class="mx-3 font-italic">{{user.prefix}} <span class="font-weight-bold">{{user.firstname}} {{user.lastname}}</span></span>
       <button *ngIf="!user" class="btn btn-primary my-2 my-sm-0" routerLink="/login" type="submit">Login</button>
