@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class TopNavComponent implements OnInit {
   user: User;
 
-  constructor(public authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, public router: Router) {
   }
 
   ngOnInit() {

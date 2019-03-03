@@ -23,9 +23,11 @@ router.post('/login', (req, res) => {
 
 router.get('/', authenticate(), async (req, res) => {
   if (req.user) {
+    delete req.user.password;
     res.json(req.user);
+  } else {
+    res.json(false);
   }
-  res.json(false);
 });
 
 export {router};

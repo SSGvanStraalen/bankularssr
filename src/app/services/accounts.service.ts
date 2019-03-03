@@ -20,5 +20,5 @@ export class AccountsService {
 export interface Account {
   acc: string;
   accnr: string;
-  balance: string;
+  balance: number;
 }

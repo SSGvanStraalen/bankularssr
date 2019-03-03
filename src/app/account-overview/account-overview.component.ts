@@ -23,4 +23,12 @@ export class AccountOverviewComponent implements OnInit {
       .subscribe(accounts => this.accounts = accounts);
   }
 
+  getAmount(amount: number, decimals: number = 2) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: decimals }).format(amount);
+  }
+
+  getAmountDecimals(amount: number) {
+    const formattedAmount = this.getAmount(amount);
+    return formattedAmount.substr(formattedAmount.length - 3);
+  }
 }

@@ -1,26 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 import {first} from "rxjs/operators";
 import {Router} from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { Title }     from '@angular/platform-browser';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-  public username: string;
-  public password: string;
-  public message: string;
+  loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  error = '';
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
     private router: Router,
     private meta: Meta,
     private titleService: Title
-    ) { 
-
+  ) {
     this.titleService.setTitle('Bankular login');
     this.meta.addTags([
       { name: 'description', content: 'There is only one bank where kitty money is real and thats this one and here you can login' },
@@ -40,29 +43,42 @@ export class LoginPageComponent implements OnInit {
       { name: 'twitter:image', content: 'http://bankularx-env.wzmxwbagad.eu-west-1.elasticbeanstalk.com/assets/KittyCard-Top.png'},
 
     ])
-
-  }
-
-  checkPass() {
-    if (this.username === this.password) {
-      console.log('You shall pass');
-      this.authService.login(this.username, this.password)
-        .pipe(first())
-        .subscribe(
-          data => {
-            this.router.navigateByUrl('/overview');    
-            console.log('data',data);
-          },
-          error => {
-            console.log('error',error);
-          });
-    } else {
-      this.message = 'Nope you shall not pass'
-      console.log('you shall not pass')
-    }
   }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
+    // reset login status
+    this.authService.logout();
+  }
+
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.loginForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.authService.login(this.f.username.value, this.f.password.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigateByUrl('/overview');
+        },
+        error => {
+          this.error = "Log in failed.";
+          this.loading = false;
+        });
   }
 
 }
