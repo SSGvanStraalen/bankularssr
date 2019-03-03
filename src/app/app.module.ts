@@ -14,6 +14,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AccountOverviewComponent} from './account-overview/account-overview.component';
 import {LoginPageComponent} from './login-page/login-page.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {LoginPageComponent} from './login-page/login-page.component';
     LoginComponent,
     AccountOverviewComponent,
     LoginPageComponent,
+    ProfileComponent,
   ],
   imports: [
     HttpClientModule,
