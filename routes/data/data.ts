@@ -5,16 +5,16 @@ let users = [
 ];
 let accounts = {
   'purr': [
-    {acc: 'Foody Account', balance: 100, accnr: 'NL00 ANGU 4812 3456 01'},
-    {acc: 'Mice Hole Account', balance: 4000, accnr: 'NL00 ANGU 4812 3456 02'},
+    {acc: 'Foody Account', balance: 1100, accnr: 'NL00 ANGU 4812 3456 01'},
+    {acc: 'Mice Hole Account', balance: 4700, accnr: 'NL00 ANGU 4812 3456 02'},
   ],
   'kitty': [
-    {acc: 'Foody Account', balance: 200, accnr: 'NL00 ANGU 4812 3456 03'},
-    {acc: 'Mice Nest Account', balance: 3000, accnr: 'NL00 ANGU 4812 3456 04'},
+    {acc: 'Foody Account', balance: 1200, accnr: 'NL00 ANGU 4812 3456 03'},
+    {acc: 'Mice Nest Account', balance: 3800, accnr: 'NL00 ANGU 4812 3456 04'},
   ],
   'squeak': [
-    {acc: 'Cheese Stash', balance: 2000, accnr: 'NL00 ANGU 4812 3456 05'},
-    {acc: 'Nuts Stash', balance: 2000, accnr: 'NL00 ANGU 4812 3456 06'},
+    {acc: 'Cheese Stash', balance: 1500, accnr: 'NL00 ANGU 4812 3456 05'},
+    {acc: 'Nuts Stash', balance: 3500, accnr: 'NL00 ANGU 4812 3456 06'},
   ],
 };
 
