@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AccountOverviewComponent} from './account-overview/account-overview.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MidNavComponent } from './mid-nav/mid-nav.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProfileComponent } from './profile/profile.component';
     AccountOverviewComponent,
     LoginPageComponent,
     ProfileComponent,
+    MidNavComponent,
   ],
   imports: [
     HttpClientModule,

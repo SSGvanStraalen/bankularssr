@@ -1,13 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand mr-5" href="#">
-        <img width="30" alt="Angular Logo" class="d-inline-block" src="../../assets/bankular_Logo.svg">
-        Bankular
-      </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg" [ngClass]="{'navbar-light': !user, 'navbar-dark': user}">
+  <a class="navbar-brand mr-5" href="#">
+    <img width="30" alt="Angular Logo" class="d-inline-block" src="../../assets/bankular_Logo.svg">
+    Bankular
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-nav mr-auto">
+      <ul *ngIf="router.url === '/'">
         <li class="nav-item active">
           <a class="nav-link" routerLink="/">HOME <span class="sr-only">(current)</span></a>
         </li>
@@ -18,12 +20,14 @@
           <a class="nav-link" routerLink="/credit" href="#">KITTYLOAN</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">CATSTOCK</a>
-          </li>
+          <a class="nav-link" href="#">CATSTOCK</a>
+        </li>
       </ul>
-      <span *ngIf="user" class="mx-3 font-italic">{{user.prefix}} <span class="font-weight-bold">{{user.firstname}} {{user.lastname}}</span></span>
-      <button *ngIf="!user" class="btn btn-primary my-2 my-sm-0" routerLink="/login" type="submit">Login</button>
-      <button *ngIf="user" class="btn btn-primary my-2 my-sm-0" (click)="logout()" >Logout</button>
-      <!-- <app-login></app-login> -->
     </div>
-  </nav>
+    <span *ngIf="user" class="mx-3 font-italic">{{user.prefix}} <span class="font-weight-bold">{{user.firstname}}
+        {{user.lastname}}</span></span>
+    <button *ngIf="router.url !== '/'" class="btn btn-primary my-2 my-sm-0" routerLink="/">Return to home</button>
+    <button *ngIf="!user" class="btn btn-primary my-2 my-sm-0" routerLink="/login" type="submit">Login</button>
+    <button *ngIf="user" class="btn btn-primary my-2 my-sm-0" (click)="logout()">Logout</button>
+  </div>
+</nav>

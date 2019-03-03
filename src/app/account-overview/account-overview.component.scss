@@ -1,0 +1,30 @@
+.card {
+    border-radius: 12px;
+    box-shadow: -5px 7px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    color: #626262;
+}
+
+.card-title {
+    font-size: 34px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.card-text {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.card-amount {
+    font-size: 50px;
+    text-align: right;
+    color: #00baff;
+}
+
+.card-amount-decimals {
+    font-size: 30px;
+    top: -.45em;
+    line-height: 0;
+    position: relative;
+}
