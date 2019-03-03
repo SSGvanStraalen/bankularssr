@@ -3,22 +3,23 @@
 <app-mid-nav></app-mid-nav>
 
 <div class="row bg-blue-gradient mt-3 pt-5">
-    <div class="col mx-5 mb-5">
-      <div *ngFor="let account of accounts" class="card mb-3">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="card-title">{{account.acc}}</div>
-              <div class="card-text">{{account.accnr}}</div>
-            </div>
-            <div class="col-md-auto">
-              <div class="card-amount">{{getAmount(account.balance, 0)}}<span
-                  class="card-amount-decimals">{{getAmountDecimals(account.balance)}}</span>
-              </div>
+  <div class="col mx-5 mb-5">
+    <div *ngFor="let account of accounts" class="card mb-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="card-title">{{account.acc}}</div>
+            <div class="card-text">{{account.accnr}}</div>
+          </div>
+          <div class="col-md-auto">
+            <div class="card-amount">
+              <img class="align-text-top pt-1" height="55" src="../../assets/pawprint.svg"/>
+              {{getAmount(account.balance, 0)}}<span
+              class="card-amount-decimals">{{getAmountDecimals(account.balance)}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

@@ -24,7 +24,8 @@ export class AccountOverviewComponent implements OnInit {
   }
 
   getAmount(amount: number, decimals: number = 2) {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: decimals }).format(amount);
+    return amount.toLocaleString('en-US', { minimumFractionDigits: 2 });
+    // return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: decimals }).format(amount);
   }
 
   getAmountDecimals(amount: number) {
