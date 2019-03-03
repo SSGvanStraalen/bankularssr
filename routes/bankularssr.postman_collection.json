@@ -17,7 +17,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"username\":\"kitty\",\r\n\"password\":\"kitty\"\r\n}"
+					"raw": "{\r\n\"username\":\"purr\",\r\n\"password\":\"purr\"\r\n}"
 				},
 				"url": {
 					"raw": "localhost:4200/api/user/login",
@@ -52,6 +52,38 @@
 					"path": [
 						"api",
 						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/accounts/transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"from\":\"NL00 ANGU 4812 3456 01\",\r\n\"to\":\"NL00 ANGU 4812 3456 03\",\r\n\"amount\":23\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/accounts/transfer/",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"accounts",
+						"transfer",
 						""
 					]
 				}

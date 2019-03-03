@@ -3,7 +3,7 @@
 const express = require('express');
 const {authenticate} = require('./common/passport');
 
-const {getAccounts} = require('./common/user');
+const {init, getAccounts, transfer} = require('./common/accounts');
 
 const router = express.Router();
 
@@ -14,5 +14,15 @@ router.get('/', authenticate(), async (req, res) => {
     res.status(404).send('Not found');
   }
 });
+
+router.post('/transfer', authenticate(), async (req, res) => {
+  if (req.user && req.user.username) {
+    res.json(transfer(req.user.username, req.body.from, req.body.to, req.body.amount));
+  } else {
+    res.status(404).send('Not found');
+  }
+});
+
+init();
 
 export {router};

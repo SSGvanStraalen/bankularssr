@@ -2,15 +2,12 @@
 
 const Promise = require('promise');
 
-import {users, accounts} from '../data/data'
+import {users} from '../data/data'
 
 function getUser(username) {
   return users.find(x => {
     return x.username === username;
   });
-}
-function getAccounts(username) {
-  return accounts[username];
 }
 
 async function validateUser(username, password) {
@@ -37,6 +34,5 @@ async function validateUser(username, password) {
 
 export {
   getUser,
-  getAccounts,
   validateUser,
 };
