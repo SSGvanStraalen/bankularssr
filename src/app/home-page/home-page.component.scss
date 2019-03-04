@@ -5,14 +5,27 @@
     background-image: linear-gradient(251deg, #ffffff, #d9d9d9 50%, #ffffff);
 }
 
-.jumbotext{
-    padding: 4px;
-    display: inline-block;
-    margin: 0px;
-    color: rgb(14, 187, 255);
-}
+.login-hero {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00baff;
+    
+    .intro {
+        font-size: 50px;
+        font-weight: 300;
+    }
+    
+    .product-name {
+        font-size: 90px;
+        font-weight: 500;
+    }
+    
+    .slogen-text {
+        font-size: 24px;
+        font-weight: 500;
+        color: #626262;
+    }
 
-.fatty {
-    font-weight: 920;
-    font-size: 80px;
 }

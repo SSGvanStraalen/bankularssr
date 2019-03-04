@@ -2,11 +2,15 @@
 <div class="jumbotron mb-0">
   <div class="container">
           <div class="row">
-            <div class="col-sm text-right p0 mr-n5">
-                <h1 class="jumbotext text-right">{{homeContent?.firstText}}</h1>
-                <h1 class="jumbotext fatty text-right">{{homeContent?.firstHeading}}</h1>
+            <div class="col-sm text-right p0 mr-n5 login-hero">
 
-                <p class="lead jumbotext text-secondary text-left ">{{homeContent?.long}}</p>          
+                <h1 class="jumbotext text-right intro">{{homeContent?.firstText}}</h1>
+                <h1 class="jumbotext fatty text-right product-name">{{homeContent?.firstHeading}}</h1>
+                <div class="float-right mr-5">
+                    <p class="lead jumbotext text-left slogen-text mb-0 mt-0">{{homeContent?.slogenLineOne}}</p>
+                    <p class="lead jumbotext text-left slogen-text mb-0 mt-0">{{homeContent?.slogenLineTwo}} </p>
+                    <p class="lead jumbotext text-left slogen-text mb-0 mt-0">{{homeContent?.slogenLineThree}}</p>
+                </div>
             </div>
             <div class="col-sm p0 m0">
                 <img alt="Angular Logo" width="500px" class="d-inline-block align-top" src="../../assets/KittyCard.png" />
