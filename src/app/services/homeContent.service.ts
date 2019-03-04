@@ -25,7 +25,9 @@ export class HomeContentService {
 export interface Content {
   firstText: string,
   firstHeading: string,
-  long: String,
+  slogenLineOne: String,
+  slogenLineTwo: String,
+  slogenLineThree: String,
   imgUrl: String
 }
 
