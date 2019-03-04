@@ -17,7 +17,9 @@ function transfer(username, fromAcc, toAcc, amount) {
   let from = getAccounts(username).find(acc => {
     return fromAcc == acc.accnr;
   });
-  if (from) {
+  if (amount < 0) {
+    return {success: false, message: 'Amount should be higher than zero.'}
+  } else if (from) {
     // all accounts
     let as = [].concat.apply([], Object.values(accounts));
     let to = as.find(a => {

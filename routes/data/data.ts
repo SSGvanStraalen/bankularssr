@@ -6,7 +6,7 @@ let users = [
 let accounts = {
   'purr': [
     {acc: 'Foody Account', balance: 1100, accnr: 'NL00 ANGU 4812 3456 01'},
-    {acc: 'Mice Hole Account', balance: 4700, accnr: 'NL00 ANGU 4812 3456 02'},
+    {acc: 'Mice Nest Account', balance: 4700, accnr: 'NL00 ANGU 4812 3456 02'},
   ],
   'kitty': [
     {acc: 'Foody Account', balance: 1200, accnr: 'NL00 ANGU 4812 3456 03'},
