@@ -24,3 +24,29 @@ form {
     top: 1vh;
     position: absolute;
 }
+
+
+.login-hero {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00baff;
+    opacity: 0.4;
+
+    .intro {
+        font-size: 50px;
+        font-weight: 300;
+    }
+    
+    .product-name {
+        font-size: 90px;
+        font-weight: 500;
+    }
+    
+    .slogen-text {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+}
