@@ -1,5 +1,6 @@
 .card {
     border-radius: 12px;
+    border: none;
     background-color: #ffffff;
     color: #626262;
     &:hover {
@@ -29,4 +30,12 @@
     top: -.45em;
     line-height: 0;
     position: relative;
+}
+
+.bg-blue {
+    border-radius: 0 0 12px 12px; 
+}
+
+form {
+    padding-top: 40px;
 }

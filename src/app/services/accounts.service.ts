@@ -1,6 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
+import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -15,10 +16,17 @@ export class AccountsService {
     return this.http.get<Account[]>(`${environment.apiUrl}/api/accounts`);
   }
 
+  saveTransfer(from: string, to: string, amount: string): Observable<string> {
+    return this.http.post<any>(`${environment.apiUrl}/api/accounts/transfer`, { from, to, amount })
+      .pipe(map(resp => {
+        return resp.message;
+      }));
+  }
 }
 
 export interface Account {
   acc: string;
   accnr: string;
   balance: number;
+  showTransfer?: boolean;
 }

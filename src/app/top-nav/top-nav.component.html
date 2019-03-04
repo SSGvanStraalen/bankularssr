@@ -30,10 +30,9 @@
         {{user.prefix}}
         <span class="font-weight-bold">{{user.firstname}} {{user.lastname}}</span>
       </span>
-      <button *ngIf="!isRootPath()" class="btn btn-primary my-2 my-sm-0" routerLink="/">Return to home</button>
+      <button *ngIf="!isRootPath()" class="btn btn-secondary my-2 my-sm-0" routerLink="/">Return to home</button>
       <button *ngIf="!user" class="btn btn-primary my-2 my-sm-0" routerLink="/login" type="submit">Login</button>
-      <button *ngIf="user" class="btn btn-primary my-2 my-sm-0" (click)="logout()">Logout</button>
+      <button *ngIf="user" class="btn btn-light my-2 my-sm-0 ml-2" (click)="logout()">Logout</button>
     </div>
-
   </div>
 </nav>
