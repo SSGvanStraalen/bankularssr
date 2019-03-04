@@ -9,7 +9,6 @@ import {AppComponent} from './app.component';
 import {TopNavComponent} from './top-nav/top-nav.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {CreditPageComponent} from './credit-page/credit-page.component';
-import {LoginComponent} from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AccountOverviewComponent} from './account-overview/account-overview.component';
@@ -23,7 +22,6 @@ import { MidNavComponent } from './mid-nav/mid-nav.component';
     TopNavComponent,
     HomePageComponent,
     CreditPageComponent,
-    LoginComponent,
     AccountOverviewComponent,
     LoginPageComponent,
     ProfileComponent,

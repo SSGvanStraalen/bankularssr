@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService, User} from '../services/auth.service';
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav',
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class TopNavComponent implements OnInit {
   user: User;
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -18,14 +18,17 @@ export class TopNavComponent implements OnInit {
   }
 
   checkStatus(): void {
-    this.authService.getUser()
-      .subscribe(user => {
-        this.user = user
-      });
+    this.authService.getUser().subscribe(user => {
+      this.user = user
+    });
   }
 
   logout() {
     this.authService.logout();
     this.router.navigateByUrl('/');
+  }
+
+  isRootPath() {
+    return this.router.url === '/';
   }
 }
