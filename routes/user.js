@@ -1,5 +1,7 @@
 'use strict';
 
+import {accounts as accs} from "./data/data";
+
 const express = require('express');
 const {validateUser} = require('./common/user');
 const {authenticate, generateToken} = require('./common/passport');
@@ -23,8 +25,9 @@ router.post('/login', (req, res) => {
 
 router.get('/', authenticate(), async (req, res) => {
   if (req.user) {
-    delete req.user.password;
-    res.json(req.user);
+    let u = {...req.user};
+    delete u.password;
+    res.json(u);
   } else {
     res.json(false);
   }
