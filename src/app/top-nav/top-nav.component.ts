@@ -20,7 +20,7 @@ export class TopNavComponent implements OnInit {
 
   checkStatus(): void {
     this.authService.getUser().subscribe(user => {
-      this.user = user
+      this.user = user;
     });
   }
 
