@@ -15,6 +15,8 @@ export class AccountOverviewComponent implements OnInit {
   loading = false;
   submitted = false;
   error = '';
+  benefs: Account[];
+  data: string;
 
   constructor(
     private accountsService: AccountsService,
@@ -24,6 +26,7 @@ export class AccountOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.getAccounts();
+    this.getBeneficiaries();
     this.transferForm = this.formBuilder.group({
       amount: ['', Validators.required],
       accountNr: ['', Validators.required]
@@ -37,6 +40,11 @@ export class AccountOverviewComponent implements OnInit {
   getAccounts(): void {
     this.accountsService.getAccounts()
       .subscribe(accounts => this.accounts = accounts);
+  }
+
+  getBeneficiaries(): void {
+    this.accountsService.getBeneficiaries()
+      .subscribe(benefs => this.benefs = benefs);
   }
 
   getAmount(amount: number, decimals: number = 2) {
@@ -61,18 +69,20 @@ export class AccountOverviewComponent implements OnInit {
       return;
     }
 
-    const fromAccountNr = account.accnr;
-    const toAccountNr = this.f.accountNr.value;
-    const amount = this.f.amount.value;
     this.loading = true;
     this.accountsService.saveTransfer(account.accnr, this.f.accountNr.value, this.f.amount.value)
       .pipe(first())
       .subscribe(
-        data => {
-          
+        result => {
+          this.loading = false;
+          this.data = (result as any).data;
+          this.error = '';
+          this.transferForm.reset();
+          this.submitted = false;
+          this.getAccounts();
         },
         error => {
-          this.error = "Log in failed.";
+          this.error = 'Transfer failed.';
           this.loading = false;
         });
   }

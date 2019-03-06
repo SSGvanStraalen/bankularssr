@@ -1,7 +1,5 @@
 'use strict';
 
-import {accounts as accs} from "./data/data";
-
 const express = require('express');
 const {validateUser} = require('./common/user');
 const {authenticate, generateToken} = require('./common/passport');

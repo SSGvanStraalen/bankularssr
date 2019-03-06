@@ -1,7 +1,7 @@
 let users = [
-  {username: 'purr', password: 'purr', firstname: 'Purr', lastname: 'Meow', prefix: 'Mr.',img:'purr.jpg'},
-  {username: 'kitty', password: 'kitty', firstname: 'Kitty', lastname: 'Meow', prefix: 'Miss',img:'kitty.jpg'},
-  {username: 'squeak', password: 'squeak', firstname: 'Tiny', lastname: 'Squeak', prefix: 'Mr.',img:'squeak.jpg'},
+  {username: 'purr', password: 'purr', firstname: 'Purr', lastname: 'Meow', prefix: 'Mr.', img: 'purr.jpg'},
+  {username: 'kitty', password: 'kitty', firstname: 'Kitty', lastname: 'Meow', prefix: 'Miss', img: 'kitty.jpg'},
+  {username: 'squeak', password: 'squeak', firstname: 'Tiny', lastname: 'Squeak', prefix: 'Mr.', img: 'squeak.jpg'},
 ];
 let accounts = {
   'purr': [
