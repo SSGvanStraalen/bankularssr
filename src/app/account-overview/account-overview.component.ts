@@ -10,6 +10,7 @@ import {first} from 'rxjs/operators';
   providers: [AccountsService]
 })
 export class AccountOverviewComponent implements OnInit {
+  private showTransferAccount: string;
   transferForm: FormGroup;
   accounts: Account[];
   loading = false;
@@ -48,8 +49,13 @@ export class AccountOverviewComponent implements OnInit {
   }
 
   getAmount(amount: number, decimals: number = 2) {
-    return amount.toLocaleString('en-US', { minimumFractionDigits: 2 });
+    return new Intl.NumberFormat('en-US', { minimumFractionDigits: decimals }).format(amount);
     // return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: decimals }).format(amount);
+  }
+
+  getAmountInteger(amount: number) {
+    const formattedAmount = this.getAmount(amount);
+    return formattedAmount.substring(0, formattedAmount.length - 3);
   }
 
   getAmountDecimals(amount: number) {
@@ -58,9 +64,13 @@ export class AccountOverviewComponent implements OnInit {
   }
 
   toggleTransfer(account: Account) {
-    account.showTransfer = !account.showTransfer
+    this.showTransferAccount = this.showTransferAccount === account.accnr ? '' : account.accnr;
   }
-  
+
+  showTransfer(account: Account) {
+    return account.accnr === this.showTransferAccount;
+  }
+
   onSubmit(account: Account) {
     this.submitted = true;
 
@@ -75,10 +85,10 @@ export class AccountOverviewComponent implements OnInit {
       .subscribe(
         result => {
           this.loading = false;
+          this.submitted = false;
           this.data = (result as any).data;
           this.error = '';
           this.transferForm.reset();
-          this.submitted = false;
           this.getAccounts();
         },
         error => {

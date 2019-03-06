@@ -19,7 +19,7 @@ export class AccountsService {
     return this.http.get<Account[]>(`${environment.apiUrl}/api/accounts/beneficiaries`);
   }
 
-  saveTransfer(from: string, to: string, amount: string): Observable<string> {
+  saveTransfer(from: string, to: string, amount: number): Observable<string> {
     return this.http.post<any>(`${environment.apiUrl}/api/accounts/transfer`, {from, to, amount});
   }
 }
@@ -28,5 +28,4 @@ export interface Account {
   acc: string;
   accnr: string;
   balance: number;
-  showTransfer?: boolean;
 }

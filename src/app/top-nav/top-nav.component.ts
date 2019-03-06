@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit {
+  isNavbarCollapsed = true;
   user: User;
 
   constructor(private authService: AuthService, private router: Router) {
