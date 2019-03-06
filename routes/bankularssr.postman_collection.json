@@ -1,94 +1,94 @@
 {
-	"info": {
-		"_postman_id": "85eecb13-3fee-4d30-bd85-fb12db9f0a1d",
-		"name": "bankularssr",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "localhost:4000/user/login",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"username\":\"purr\",\r\n\"password\":\"purr\"\r\n}"
-				},
-				"url": {
-					"raw": "localhost:4200/api/user/login",
-					"host": [
-						"localhost"
-					],
-					"port": "4200",
-					"path": [
-						"api",
-						"user",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "localhost:4000/accounts/",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "localhost:4000/api/accounts/",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"accounts",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "localhost:4000/api/accounts/transfer",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"from\":\"NL00 ANGU 4812 3456 01\",\r\n\"to\":\"NL00 ANGU 4812 3456 03\",\r\n\"amount\":23\r\n}"
-				},
-				"url": {
-					"raw": "localhost:4000/api/accounts/transfer/",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"accounts",
-						"transfer",
-						""
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "85eecb13-3fee-4d30-bd85-fb12db9f0a1d",
+    "name": "bankularssr",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "localhost:4000/user/login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"username\":\"purr\",\r\n\"password\":\"purr\"\r\n}"
+        },
+        "url": {
+          "raw": "localhost:4200/api/user/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "4200",
+          "path": [
+            "api",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:4000/accounts/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "localhost:4000/api/accounts/",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "accounts",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:4000/api/accounts/transfer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"from\":\"NL00 ANGU 4812 3456 01\",\r\n\"to\":\"NL00 ANGU 4812 3456 03\",\r\n\"amount\":23\r\n}"
+        },
+        "url": {
+          "raw": "localhost:4000/api/accounts/transfer/",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "accounts",
+            "transfer",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
 }

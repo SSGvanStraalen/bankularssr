@@ -7,10 +7,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./mid-nav.component.scss']
 })
 export class MidNavComponent implements OnInit {
+  isNavbarCollapsed = true;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
 }

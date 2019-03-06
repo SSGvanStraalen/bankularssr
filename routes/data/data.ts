@@ -1,12 +1,12 @@
 let users = [
-  {username: 'purr', password: 'purr', firstname: 'Purr', lastname: 'Meow', prefix: 'Mr.',img:'purr.jpg'},
-  {username: 'kitty', password: 'kitty', firstname: 'Kitty', lastname: 'Meow', prefix: 'Miss',img:'kitty.jpg'},
-  {username: 'squeak', password: 'squeak', firstname: 'Tiny', lastname: 'Squeak', prefix: 'Mr.',img:'squeak.jpg'},
+  {username: 'purr', password: 'purr', firstname: 'Purr', lastname: 'Meow', prefix: 'Mr.', img: 'purr.jpg'},
+  {username: 'kitty', password: 'kitty', firstname: 'Kitty', lastname: 'Meow', prefix: 'Miss', img: 'kitty.jpg'},
+  {username: 'squeak', password: 'squeak', firstname: 'Tiny', lastname: 'Squeak', prefix: 'Mr.', img: 'squeak.jpg'},
 ];
 let accounts = {
   'purr': [
     {acc: 'Foody Account', balance: 1100, accnr: 'NL00 ANGU 4812 3456 01'},
-    {acc: 'Mice Hole Account', balance: 4700, accnr: 'NL00 ANGU 4812 3456 02'},
+    {acc: 'Mice Nest Account', balance: 4700, accnr: 'NL00 ANGU 4812 3456 02'},
   ],
   'kitty': [
     {acc: 'Foody Account', balance: 1200, accnr: 'NL00 ANGU 4812 3456 03'},

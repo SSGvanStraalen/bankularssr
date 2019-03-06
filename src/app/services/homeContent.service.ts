@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from "rxjs";
-import { environment } from '../../environments/environment';
+import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class HomeContentService {
   private homeContentUrl = '/api/homeContent';
 
   constructor(private http: HttpClient) {
-      this.homeContentUrl = `${environment.apiUrl}${this.homeContentUrl}`;
+    this.homeContentUrl = `${environment.apiUrl}${this.homeContentUrl}`;
 
   }
 
@@ -23,12 +23,12 @@ export class HomeContentService {
 }
 
 export interface Content {
-  firstText: string,
-  firstHeading: string,
-  slogenLineOne: String,
-  slogenLineTwo: String,
-  slogenLineThree: String,
-  imgUrl: String
+  firstText: string;
+  firstHeading: string;
+  slogenLineOne: string;
+  slogenLineTwo: string;
+  slogenLineThree: string;
+  imgUrl: string;
 }
 
 

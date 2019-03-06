@@ -1,23 +1,24 @@
 'use strict';
 
 const passport = require('passport');
-const { Strategy } = require('passport-jwt');
+const {Strategy} = require('passport-jwt');
 const jwt = require('jsonwebtoken');
 
-const { getUser } = require('./user');
+const {getUser} = require('./user');
 
 const secret = 'igocompletelycrazy';
 
 function generateToken(obj) {
-  return jwt.sign(obj, secret, { expiresIn: '60m' });
+  return jwt.sign(obj, secret, {expiresIn: '60m'});
 }
+
 function authenticate() {
-  return passport.authenticate('jwt', { session: false });
+  return passport.authenticate('jwt', {session: false});
 }
 
 function init() {
   // init passport
-  let cookieExtractor = function(req) {
+  let cookieExtractor = function (req) {
     let token = null;
     if (req && req.cookies) token = req.cookies['jwt'];
     return token;

@@ -14,11 +14,11 @@ $primary: #00baff;
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/custom-forms";
 @import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/transitions";
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 *{
     font-family: 'Quicksand', sans-serif;
-    
 }
 
 .bg-cat {

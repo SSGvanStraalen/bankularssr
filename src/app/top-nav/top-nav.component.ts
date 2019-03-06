@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit {
+  isNavbarCollapsed = true;
   user: User;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -19,7 +20,7 @@ export class TopNavComponent implements OnInit {
 
   checkStatus(): void {
     this.authService.getUser().subscribe(user => {
-      this.user = user
+      this.user = user;
     });
   }
 

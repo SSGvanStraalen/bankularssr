@@ -2,24 +2,69 @@
 <app-profile></app-profile>
 <app-mid-nav></app-mid-nav>
 
-<div class="row bg-blue-gradient mt-3 pt-5">
-  <div class="col mx-5 mb-5">
-    <div *ngFor="let account of accounts" class="card mb-3">
-      <div class="card-body">
-        <div class="row">
-          <div class="col">
-            <div class="card-title">{{account.acc}}</div>
-            <div class="card-text">{{account.accnr}}</div>
-          </div>
-          <div class="col-md-auto">
-            <div class="card-amount">
-              <img class="align-text-top pt-1" height="55" src="../../assets/pawprint.svg"/>
-              {{getAmount(account.balance, 0)}}<span
-              class="card-amount-decimals">{{getAmountDecimals(account.balance)}}</span>
+<div class="bg-blue-gradient">
+  <div class="row mt-3 pt-5">
+    <div class="col mx-5 mb-5">
+      <div *ngFor="let account of accounts" class="card mb-3">
+        <div class="card-body" (click)="toggleTransfer(account)">
+          <div class="row">
+            <div class="col">
+              <div class="card-title">{{account.acc}}</div>
+              <div class="card-text">{{account.accnr}}</div>
+            </div>
+            <div class="col-md-auto">
+              <div class="card-amount">
+                <img class="align-text-top pt-1" height="55" src="../../assets/pawprint.svg"/>
+                {{getAmountInteger(account.balance)}}<span
+                class="card-amount-decimals">{{getAmountDecimals(account.balance)}}</span>
+              </div>
             </div>
           </div>
         </div>
+        <div *ngIf="showTransfer(account)" class="card-body bg-blue">
+          <form [formGroup]="transferForm" (ngSubmit)="onSubmit(account)">
+            <h3>Transferz</h3>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="amount">Moneyz</label>
+                  <input type="text" id="amount" formControlName="amount" class="form-control"
+                         placeholder="Press numberz" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"/>
+                  <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                    <div *ngIf="f.amount.errors.required"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="accountNr">toooo!</label>
+                  <select id="accountNr" formControlName="accountNr" class="form-control"
+                          placeholder="Givez name" [ngClass]="{ 'is-invalid': submitted && f.accountNr.errors }">
+                    <option *ngFor="let b of benefs" [ngValue]="b.accnr">{{ b.accnr }}</option>
+                  </select>
+                  <!--<input type="text" id="accountNr" formControlName="accountNr" class="form-control"-->
+                  <!--placeholder="Givez name" [ngClass]="{ 'is-invalid': submitted && f.accountNr.errors }" />-->
+                  <div *ngIf="submitted && f.accountNr.errors" class="invalid-feedback">
+                    <div *ngIf="f.accountNr.errors.required"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 align-self-end">
+                <div class="form-group">
+                  <img *ngIf="loading" class="pl-2"
+                       src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                  <button [disabled]="loading" class="btn btn-secondary">TRANSFERZ NOW</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mx-5 mb-5 text-right">
+      <img height="40" *ngIf="data" class="pl-2" [src]="data"/>
     </div>
   </div>
 </div>
